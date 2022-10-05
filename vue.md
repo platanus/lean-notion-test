@@ -65,7 +65,9 @@ function bla() {
         | asd | asd |
         | asd | asd |
 
-    1. bli
+    1. [tips vueeeeee](/a4caec1b5cad4b28871326880090caf7)
+
+        1. [otros tips](/98ba3b4f2b8045368be6ca31b5eb3fb7)
 
 1. Blu
 
@@ -114,11 +116,11 @@ function bla() {
 
         1. meeee
 
-            <img src='assets/vue-97263d1b-280a-47b6-9127-cee195260585.png'/>
+            <img src='assets/vue-05aac8e9-b038-467a-8806-4297afef360a.png'/>
 
     
 
-<img src='assets/vue-86c4a564-e7c6-4746-9890-af9e34affc46.png'/>
+<img src='assets/vue-1308a79b-00ce-4392-9054-6adbb9d646ec.png'/>
 
 [Power API](power_api.md)
 
@@ -136,6 +138,6 @@ function bla() {
 
 
 
-<img src='assets/vue-6179b377-e128-4653-ba76-ab83e2ce7e4b.jpg'/>
+<img src='assets/vue-7f74c317-7c4f-458e-9318-0812c3fe8662.jpg'/>
 
-<img src='assets/vue-b6340275-8d7e-4e4a-80a6-45048d25238e.jpg'/>
+<img src='assets/vue-aa9bfb87-8c75-4f68-b3e6-d980c21b9f36.jpg'/>

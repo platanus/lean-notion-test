@@ -1,6 +1,4 @@
 
-# Vue
-
 # Vueeeeee
 
 hola vue
@@ -116,11 +114,11 @@ function bla() {
 
         1. meeee
 
-            <img src='assets/vue-915c4758-cb2d-499c-bbc1-91bedcad75c0.png'/>
+            <img src='assets/vue-c0aea112-b6ac-47f1-ab4a-17f233abd355.png'/>
 
     
 
-<img src='assets/vue-b8ec0e8b-e71b-4836-82bd-3b9864360728.png'/>
+<img src='assets/vue-97f4c0aa-83f3-4b82-94f4-e6dc7cb0f33c.png'/>
 
 [Power API](power_api.md)
 
@@ -138,6 +136,6 @@ function bla() {
 
 
 
-<img src='assets/vue-d879e867-248f-493e-8214-70302d1e70f9.jpg'/>
+<img src='assets/vue-c8b4424e-87eb-453f-96c9-bca789ef47aa.jpg'/>
 
-<img src='assets/vue-245d125d-da05-43da-8777-396f496b6806.jpg'/>
+<img src='assets/vue-a592485d-65bb-42e0-b4a7-d5a505d43c34.jpg'/>

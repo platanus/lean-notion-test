@@ -26,8 +26,6 @@ Hay casos en que se pueden mezclar, como por ejemplo 👌 un componente complej
 
 2+2=4
 
-[Ver video](assets/vue-f722b689-8f59-48ff-9e87-bc5c65af19aa.mp4v)
-
 [Ver video](https://www.youtube.com/watch?v=1TewCPi92ro)
 
 ```ruby
@@ -116,11 +114,11 @@ function bla() {
 
         1. meeee
 
-            <img src='assets/vue-f8918c09-ba2e-4fef-9fa6-af8a619f9ff5.png'/>
+            <img src='assets/vue-97263d1b-280a-47b6-9127-cee195260585.png'/>
 
     
 
-<img src='assets/vue-061dc308-c327-4d5c-ac57-1a396da256eb.png'/>
+<img src='assets/vue-86c4a564-e7c6-4746-9890-af9e34affc46.png'/>
 
 [Power API](power_api.md)
 
@@ -138,6 +136,6 @@ function bla() {
 
 
 
-<img src='assets/vue-714d38e7-f302-48ae-af5c-6537b68516c9.jpg'/>
+<img src='assets/vue-6179b377-e128-4653-ba76-ab83e2ce7e4b.jpg'/>
 
-<img src='assets/vue-28e79881-dd04-421a-8af6-5c5f9daf5457.jpg'/>
+<img src='assets/vue-b6340275-8d7e-4e4a-80a6-45048d25238e.jpg'/>

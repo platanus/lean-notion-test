@@ -1,43 +1,31 @@
 # Power API
 
 Es un [engine de Rails](https://guides.rubyonrails.org/engines.html#what-are-engines-questionmark) desarrollado por **Platanus** que reúne un conjunto de gemas y configuraciones pensadas para construir APIs REST de calidad.
-# Power API
 
 ### ¿Por qué la usamos?
-# Power API
 
 Por dos motivos:
-# Power API
 
 1. Porque en esta gema hemos ido recopilando todas aquellas herramientas que consideramos nos han sido útiles a lo largo de nuestros desarrollos en Platanus.
-# Power API
 
 1. Porque todas estas configuraciones varían muy poco (o nada) de proyecto en proyecto. Por esto, nos pareció buena idea realizar estas mejoras en un único lugar para luego ocupar en todas nuestras aplicaciones.
-# Power API
 
 ### ¿Cómo la usamos?
-# Power API
 
 ### Instalación
-# Power API
 
 La gema viene instalada si el proyecto se generó usando [Potassium](https://github.com/platanus/potassium) con la opción `api` activada. Si el proyecto no fue creado con Potassium, se puede instalar siguiendo las instrucciones de [README](https://github.com/platanus/power_api#installation).
-# Power API
 
 ### Usamos el generador de la gema para agregar un recurso a la API
-# Power API
 
 Supongamos que tenemos el modelo:
-# Power API
 
 ```ruby
 class Blog < ApplicationRecord
 end
 ```
-# Power API
 
 y queremos tener los típicos endpoints REST:
-# Power API
 
 ```plain text
 GET     /api/v1/blogs
@@ -46,18 +34,14 @@ GET     /api/v1/blogs/:id
 PUT     /api/v1/blogs/:id
 DELETE  /api/v1/blogs/:id
 ```
-# Power API
 
 Para esto, deberíamos ejecutar el siguiente generador:
-# Power API
 
 ```bash
 rails g power_api:controller blog
 ```
-# Power API
 
 Esto creará el controlador (dentro de `/app/controllers/api/v1/blogs_controller.rb`) y todo lo necesario para que tengas tus endpoints funcionando. Para más información u opciones que permite el comando, revisa la [documentación de la gema](https://github.com/platanus/power_api#controller-generation)
-# Power API
 
 ```ruby
 class Api::V1::BlogsController < Api::V1::BaseController
@@ -95,19 +79,14 @@ class Api::V1::BlogsController < Api::V1::BaseController
   end
 end
 ```
-# Power API
 
 **Tener en cuenta:**
-# Power API
 
 > El generador sirve para crear los endpoints REST típicos y [anidados](https://github.com/platanus/power_api#--parent-resource). Si necesitas algo custom, deberás hacerlo a mano. Pero siempre ten en cuenta que si piensas en recursos REST, probablemente encontrarás una forma de modelar que calce con lo que ofrece el generador.
-# Power API
 
 ### Usamos [AMS](https://github.com/rails-api/active_model_serializers) para estructurar el formato de respuesta de nuestra API
-# Power API
 
 Siguiendo el ejemplo anterior, si corremos el generador, se agregará el siguiente serializer en `/app/serializers/api/v1/blog_serializer.rb`
-# Power API
 
 ```ruby
 class Api::V1::BlogSerializer < ActiveModel::Serializer
@@ -118,26 +97,19 @@ class Api::V1::BlogSerializer < ActiveModel::Serializer
   )
 end
 ```
-# Power API
 
 Como la gema está configurada para devolver el formato de [json api](https://jsonapi.org/)
 al ejecutar por ejemplo la request `GET /api/v1/blogs` obtendremos algo así:
-# Power API
 
-<img src='assets/power-api-da40528b-93d1-495a-b77c-ee076e7606a9.png'/>
-# Power API
+<img src='assets/power-api-904a5368-0a6a-401b-ad4c-59bedd6db325.png'/>
 
 **Tener en cuenta:**
-# Power API
 
 > Siempre utiliza serializers para responder con el API. Es importante que todos los endpoints devuelvan la información con el mismo formato.
-# Power API
 
 ### Usamos un [concern de Rails](https://api.rubyonrails.org/classes/ActiveSupport/Concern.html) para manejar los errores que genera la API
-# Power API
 
 Supongamos que tenemos el siguiente controller con el `create` endpoint y supongamos también que el atributo `title` es requerido:
-# Power API
 
 ```ruby
 class Api::V1::BlogsController < Api::V1::BaseController
@@ -153,19 +125,14 @@ class Api::V1::BlogsController < Api::V1::BaseController
   end
 end
 ```
-# Power API
 
 Al ejecutar la request `POST /api/v1/blogs` sin enviar el atributo `title`, se lanzará una exception que será manejada por el [concern](https://github.com/platanus/power_api#the-apierror-concern) devolviendo una respuesta con formato estándar:
-# Power API
 
-<img src='assets/power-api-da8dcd83-7380-4c50-aa7f-3004d448618d.png'/>
-# Power API
+<img src='assets/power-api-57bf3479-1995-444f-b083-d2957c020fe3.png'/>
 
 **Tener en cuenta:**
-# Power API
 
 * Siempre lanza exceptions y deja que el concern los maneje. No hagas condicionales ni devuelvas errores custom. Los errores siempre deberían tener el mismo formato y ser manejados en un único lugar (el concern).
-# Power API
 
 * Si necesitas manejar algún tipo de error específico, siempre podrás agregarlo así:
 
@@ -176,13 +143,10 @@ Al ejecutar la request `POST /api/v1/blogs` sin enviar el atributo `title`, se l
       end
     end
     ```
-# Power API
 
 ### Usamos un [custom responder](https://github.com/platanus/power_api#the-apiresponder) para manejar las respuestas de nuestra API
-# Power API
 
 Siguiendo el ejemplo anterior:
-# Power API
 
 ```ruby
 class Api::V1::BlogsController < Api::V1::BaseController
@@ -198,32 +162,23 @@ class Api::V1::BlogsController < Api::V1::BaseController
   end
 end
 ```
-# Power API
 
 Al ejecutar `POST /api/v1/blogs`, el método `respond_with` invocará al responder y entregará el objeto `Blog` que se acaba de crear usando el serializer y, por tratarse de un `POST`, entenderá que debe devolver el HTTP status code 201 (created).
-# Power API
 
 El responder además devolverá:
-# Power API
 
 * Un HTTP status code 200 OK si se trata de un `GET` o un `PUT` además del/los recurso/s serializado/s con AMS.
-# Power API
 
 * Un HTTP status code 204 No Content si se trata de un `DELETE`.
-# Power API
 
 **Tener en cuenta:**
-# Power API
 
 > Evitar usar `render`. El uso de `render` se salta el responder y nos obliga a especificar el código y recurso a devolver en el mismo controller. Esto es una mala práctica porque es algo que debería definirse en un único lugar y ser consistente a través de todos los controladores.
-# Power API
 
 ### Usamos [Rswag](https://github.com/rswag/rswag) para testear nuestra API
-# Power API
 
 Si usamos el generador `rails g power_api:controller blog`, se crearán dentro del directorio:
 `/spec/integration/api/v1/blogs_spec.rb` los tests para nuestro controlador.
-# Power API
 
 ```ruby
 require 'swagger_helper'
@@ -307,17 +262,14 @@ describe 'API V1 Blogs', swagger_doc: 'v1/swagger.json' do
   end
 end
 ```
-# Power API
 
 **Tener en cuenta:**
-# Power API
 
 * Para correr los tests se debe ejecutar:
 
     ```bash
     bundle exec rspec spec/integration
     ```
-# Power API
 
 * Power API genera la estructura de directorios y archivos necesarios para trabajar con Rswag. Algunos de los más importantes son:
 
@@ -326,34 +278,25 @@ end
     * `/spec/swagger/v1/schemas/` aquí se definen los schemas (formato de recursos del api y params) que son referenciados en el archivo anterior.
 
     * `spec/swagger_helper.rb` es como el análogo al `rails_helper` de `rspec`. Acá es donde se configura rswag.
-# Power API
 
 ### Usamos [Rswag](https://github.com/rswag/rswag) para documentar nuestra API
-# Power API
 
 Al armar nuestros tests con rswag, además estamos armando la documentación.
 Para generarla se debe correr el siguiente comando:
-# Power API
 
 ```bash
 rails rswag:specs:swaggerize
 ```
-# Power API
 
 Esto creará el archivo `/swagger/v1/swagger.json` que es desde donde se armará la documentación que será accesible desde: `http://localhost:3000/api-docs` y se verá así:
-# Power API
 
-<img src='assets/power-api-b730a9ff-1039-48d1-a4d7-b65f05b32dc2.png'/>
-# Power API
+<img src='assets/power-api-6ebdd003-32ec-49d9-b57d-173a5167fa8b.png'/>
 
 ### Usamos [Simple Token Authentication](https://github.com/gonzalo-bulnes/simple_token_authentication) para autorizar el acceso a nuestra API
-# Power API
 
 Para ver el funcionamiento, puedes visitar el README de la gema pero en corto lo que hacemos es lo siguiente:
-# Power API
 
 1. Corriendo el generador de la gema, crearemos una migración que agregará un `authentication_token` al modelo que queremos autorizar.
-# Power API
 
 1. Ejecutaremos en el modelo a autorizar el método `acts_as_token_authenticatable` así:
 
@@ -364,7 +307,6 @@ Para ver el funcionamiento, puedes visitar el README de la gema pero en corto lo
       # more code...
     end
     ```
-# Power API
 
 1. Luego en el controller que queremos que sea autorizado ejecutaremos `acts_as_token_authentication_handler_for` así:
 
@@ -377,13 +319,10 @@ Para ver el funcionamiento, puedes visitar el README de la gema pero en corto lo
     ```
 
     Esto exigirá que las requests sean firmadas con email y token
-# Power API
 
 1. Ejecutaremos la request así: `GET <http://localhost:3000/api/v1/blogs/1?user_email=developer@platan.us?user_token=xxx`>
-# Power API
 
 **Tener en cuenta:**
-# Power API
 
 * Podemos correr el instalador de Power API así:
 
@@ -392,19 +331,14 @@ Para ver el funcionamiento, puedes visitar el README de la gema pero en corto lo
     ```
 
     para que deje lista la configuración de Simple Token Authentication
-# Power API
 
 * Por defecto el token se manda por query string, quizás sería bueno cambiar la configuración de Simple Token Authentication para que se mande por header.
-# Power API
 
 * La gema no viene con un endpoint que permita conseguir el token del usuario. Por esto, es buena idea crear a mano un controller `login_attempts_controller.rb` con un action `create` que devuelva el token para un `email` y `password`.
-# Power API
 
 ### Usamos [API Pagination](https://github.com/davidcelis/api-pagination) para la paginación
-# Power API
 
 Para activarla simplemente debemos ejecutar el método `paginate` así:
-# Power API
 
 ```ruby
 class Api::V1::BlogsController < Api::V1::BaseController
@@ -413,30 +347,22 @@ class Api::V1::BlogsController < Api::V1::BaseController
   end
 end
 ```
-# Power API
 
 Para ver el recurso paginado se deberá ejecutar la request así:
-# Power API
 
 ```plain text
 http://localhost:3000/api/v1/blogs?page[number]=2&page[size]=5
 ```
-# Power API
 
 Esto agregará:
-# Power API
 
 * Headers relacionados con la paginación.
-# Power API
 
 * Links a `self`, `first`, `prev`, `next` y `last` en el serializer.
-# Power API
 
 ### Usamos [Ransack](https://github.com/activerecord-hackery/ransack) para el filtrado de recursos
-# Power API
 
 Para activarlo simplemente debemos ejecutar el método `filtered_collection` así:
-# Power API
 
 ```ruby
 class Api::V1::BlogsController < Api::V1::BaseController
@@ -445,41 +371,29 @@ class Api::V1::BlogsController < Api::V1::BaseController
   end
 end
 ```
-# Power API
 
 Para filtrar la información se deberá ejecutar la request así:
-# Power API
 
 ```plain text
 http://localhost:3000/api/v1/blogs?q[title_eq]=Vile%20Bodies
 ```
-# Power API
 
 Para más opciones de filtrado revisa [la documentación](https://github.com/activerecord-hackery/ransack#search-matchers)
-# Power API
 
 ### Recursos útiles
-# Power API
 
 * [Power API](https://github.com/platanus/power_api)
-# Power API
 
 * [Blog Post: Cómo crear una API REST en Rails testeada, documentada y con buenas prácticas en 1 minuto y 54 segundos.](https://blog.platan.us/c%C3%B3mo-crear-una-api-rest-en-rails-testeada-documentada-y-con-buenas-pr%C3%A1cticas-en-1-minuto-y-54-4839009318a0)
-# Power API
 
 * [API Pagination](https://github.com/davidcelis/api-pagination)
-# Power API
 
 * [ActiveModelSerializers](https://github.com/rails-api/active_model_serializers)
-# Power API
 
 * [Ransack](https://github.com/activerecord-hackery/ransack)
-# Power API
 
 * [Responders](https://github.com/heartcombo/responders)
-# Power API
 
 * [Rswag](https://github.com/rswag/rswag)
-# Power API
 
 * [Simple Token Authentication](https://github.com/gonzalo-bulnes/simple_token_authentication)

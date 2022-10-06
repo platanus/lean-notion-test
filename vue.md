@@ -115,11 +115,11 @@ function bla() {
 
         1. meeee
 
-            <img src='assets/vue-c0712053-a07c-4609-bb3d-58e2f9c4ba05.png'/>
+            <img src='assets/vue-935274b0-2589-42b9-aca1-06de70523b5e.png'/>
 
     
 
-<img src='assets/vue-881d3153-79d2-4550-a24c-387e913cba35.png'/>
+<img src='assets/vue-4134c847-4995-47cf-8f09-2bb96f50dd5d.png'/>
 
 [Power API](power_api.md)
 
@@ -137,6 +137,6 @@ function bla() {
 
 
 
-<img src='assets/vue-c2980924-b605-43d7-a342-aa72b730e7c6.jpg'/>
+<img src='assets/vue-0bf288d4-1cb8-40a2-b9bc-9602fd156721.jpg'/>
 
-<img src='assets/vue-6a2b32ee-2157-421c-8804-ea2db4e9b011.jpg'/>
+<img src='assets/vue-a568e8e3-9fe9-4844-b13d-25c8bf288ce2.jpg'/>

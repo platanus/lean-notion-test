@@ -1,6 +1,6 @@
 # Power API
 
-Es un [engine de Rails](https://guides.rubyonrails.org/engines.html#what-are-engines-questionmark) desarrollado por **Platanus** que reúne un conjunto de gemas y configuraciones pensadas para construir APIs REST de calidad.
+Es un [engine de Rails](https://guides.rubyonrails.org/engines.html#what-are-engines-questionmark) desarrollado por **Platanus** que reúne un conjunto de gemas y configuraciones pensadas para construir APIs REST de calidadddddd
 
 <img src='assets/power-api-1.png'/>
 
@@ -8,7 +8,7 @@ HOLAAAAAA
 
 ### ¿Por qué la usamos?
 
-Por dos motivos:
+Por dos motivos:ssss
 
 1. Porque en esta gema hemos ido recopilando todas aquellas herramientas que consideramos nos han sido útiles a lo largo de nuestros desarrollos en Platanus.
 

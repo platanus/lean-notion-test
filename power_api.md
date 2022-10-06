@@ -101,7 +101,7 @@ end
 Como la gema está configurada para devolver el formato de [json api](https://jsonapi.org/)
 al ejecutar por ejemplo la request `GET /api/v1/blogs` obtendremos algo así:
 
-<img src='assets/power-api-c9281605-2dec-4b61-bc3c-cf4e8c7239a1.png'/>
+<img src='assets/power-api-7c35e261-4474-4b56-a677-aea74af05ace.png'/>
 
 **Tener en cuenta:**
 
@@ -128,7 +128,7 @@ end
 
 Al ejecutar la request `POST /api/v1/blogs` sin enviar el atributo `title`, se lanzará una exception que será manejada por el [concern](https://github.com/platanus/power_api#the-apierror-concern) devolviendo una respuesta con formato estándar:
 
-<img src='assets/power-api-9dcc8161-6556-4427-bcf2-0e18f0dea349.png'/>
+<img src='assets/power-api-88e21e68-30ec-4ffc-a078-568268a173f0.png'/>
 
 **Tener en cuenta:**
 
@@ -290,7 +290,7 @@ rails rswag:specs:swaggerize
 
 Esto creará el archivo `/swagger/v1/swagger.json` que es desde donde se armará la documentación que será accesible desde: `http://localhost:3000/api-docs` y se verá así:
 
-<img src='assets/power-api-feac8c9e-f784-47c5-b782-7e84c139e24e.png'/>
+<img src='assets/power-api-36407571-a41e-4fcd-9613-892ae5de7f38.png'/>
 
 ### Usamos [Simple Token Authentication](https://github.com/gonzalo-bulnes/simple_token_authentication) para autorizar el acceso a nuestra API
 

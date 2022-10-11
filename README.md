@@ -19,6 +19,15 @@ Esta es La Guía de Platanus. Acá encontrarás una suerte de mandamientos, line
             * [Active Job](stack/ruby/rails/active_job.md)
         * [Gems](stack/ruby/gems.md)
 * [Getting Started](stack/getting_started.md)
+## [Setup](setup.md)
+    * [Configuración de proyectos](setup/configuracion_de_proyectos.md)
+* [Configuración de tu entorno local](setup/configuracion_de_tu_entorno_local.md)
+    * [Instalación Base](setup/configuracion_de_tu_entorno_local/instalacion_base.md)
+        * [OSX](setup/configuracion_de_tu_entorno_local/instalacion_base/osx.md)
+        * [Windows](setup/configuracion_de_tu_entorno_local/instalacion_base/windows.md)
+        * [Linux](setup/configuracion_de_tu_entorno_local/instalacion_base/linux.md)
+    * [Tecnologías](setup/configuracion_de_tu_entorno_local/tecnologias.md)
+    * [Herramientas](setup/configuracion_de_tu_entorno_local/herramientas.md)
 # License
 
 La Guia is © 2022 platanus, spa. It is free software and may be redistributed under the terms specified in the LICENSE file.

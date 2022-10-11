@@ -23,11 +23,11 @@ end
 
 Al acceder a `http://localhost:3000/admin/blogs` veremos el listado de blogs:
 
-<img src='./assets/active-admin-1.png'/>
+<img src='assets/active-admin-1.png'/>
 
 y si hacemos clic en el link "Editar" de alguno de los blogs veremos el formulario:
 
-<img src='./assets/active-admin-2.png'/>
+<img src='assets/active-admin-2.png'/>
 
 Listo! Eso es todo lo que necesitas hacer para tener algo funcionando. De todos modos, en un proyecto Platanus comúnmente verás algo como esto:
 
@@ -69,7 +69,7 @@ end
 
 para tener más control de lo que se quiere mostrar. Por ejemplo, así se ve el index con la configuración custom:
 
-<img src='./assets/active-admin-3.png'/>
+<img src='assets/active-admin-3.png'/>
 
 ### I18n
 
@@ -90,7 +90,7 @@ es-CL:
 
 De esta manera al entrar por ejemplo la vista de un `Blog` verás los atributos traducidos:
 
-<img src='./assets/active-admin-4.png'/>
+<img src='assets/active-admin-4.png'/>
 
 Ten en cuenta que también funciona con métodos (getters) custom. Por ejemplo, podrías tener:
 
@@ -165,7 +165,7 @@ Para agrupar varios items dentro de un mismo menú, debes:
     end
     ```
 
-    <img src='./assets/active-admin-5.png'/>
+    <img src='assets/active-admin-5.png'/>
 
 **Ocultar menú**
 
@@ -181,7 +181,7 @@ end
 
 A simple vista parece no tener mucha utilidad pero lo importante aquí es que aunque no exista el menú, igual existen los endpoints. Algo que puede ser conveniente si queremos usar alguna ruta del admin como una API.
 
-<img src='./assets/active-admin-6.png'/>
+<img src='assets/active-admin-6.png'/>
 
 **Menú condicional**
 
@@ -200,7 +200,7 @@ end
 En Platanus usamos Active Admin con el [adapter de Pundit](https://activeadmin.info/13-authorization-adapter.html#using-the-pundit-adapter) para autorizar recursos.
 Si al registrar un nuevo recurso en AA, no tienes creado el policy de ese recurso, observarás un error así:
 
-<img src='./assets/active-admin-7.png'/>
+<img src='assets/active-admin-7.png'/>
 
 Si esto ocurre, agrega el policy correspondiente y define los permisos para cada una de las acciones del CRUD:
 
@@ -250,11 +250,11 @@ end
 
 Al tratar de acceder a `http://localhost:3000/admin/blogs/303`
 
-<img src='./assets/active-admin-8.png'/>
+<img src='assets/active-admin-8.png'/>
 
 Se puede ver además como el link a "Ver" desapareció:
 
-<img src='./assets/active-admin-9.png'/>
+<img src='assets/active-admin-9.png'/>
 
 ### Action Items
 
@@ -266,7 +266,7 @@ action_item :go_to_admins, only: [:index] do
 end
 ```
 
-<img src='./assets/active-admin-10.png'/>
+<img src='assets/active-admin-10.png'/>
 
 > Ten en cuenta que puedes decidir en qué vistas aparecerá el botón usando la opción only.
 
@@ -284,7 +284,7 @@ end
 
 sumará el endpoint `/admin/blogs/:id/send_mail` a los endpoints del CRUD.
 
-<img src='./assets/active-admin-11.png'/>
+<img src='assets/active-admin-11.png'/>
 
 Ten en cuenta que se puede utilizar `action_item`s para ejecutar estas nuevas acciones. Por ejemplo, el siguiente código agregará un botón en la vista del blog (`show`) desde el que se llamará a la acción `send_mail`.
 
@@ -305,7 +305,7 @@ index do
 end
 ```
 
-<img src='./assets/active-admin-12.png'/>
+<img src='assets/active-admin-12.png'/>
 
 ### Collection Action
 
@@ -335,7 +335,7 @@ La idea entonces con esto es que las `member_action`s se usen junto a `action_it
 
 Si prestaste atención a la imagen del formulario de la sección "Uso básico", seguro notaste que el selector de usuarios no muestra correctamente el nombre de los mismos:
 
-<img src='./assets/active-admin-13.png'/>
+<img src='assets/active-admin-13.png'/>
 
 esto se debe a que Active Admin espera que los recursos tengan definido el método: `:display_name` para que puedan ser representados como "String". Si el recurso no lo implementa, simplemente llamará a `to_s` mostrando como resultado lo que vemos en el selector. Entonces, para solucionar esto, podemos hacer lo siguiente:
 
@@ -347,7 +347,7 @@ class User < ApplicationRecord
 end
 ```
 
-<img src='./assets/active-admin-14.png'/>
+<img src='assets/active-admin-14.png'/>
 
 > Ten en cuenta que display_name (o cualquiera de las otras opciones) se utilizará en varios lugares: en el título de un recurso, en los links de las rows/columns y, como vimos, en los selectores.
 
@@ -380,7 +380,7 @@ Hay veces que necesitamos agregar nuevos endpoints con HTML a medida. Para hacer
     <p><%= @blog.body %></p>
     ```
 
-    <img src='./assets/active-admin-15.png'/>
+    <img src='assets/active-admin-15.png'/>
 
     Ten en cuenta que puedes agregar el archivo con extensión `.arb` en vez de `.erb` y usar la gema [Arbre](https://activeadmin.github.io/arbre/) que es el DSL que Active Admin utiliza para dibujar sus vistas. El siguiente código:
 

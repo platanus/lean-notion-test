@@ -1,5 +1,4 @@
-# Summary
-## [Stack](stack.md)
+# Summary## [Stack](stack.md)
     * [Ruby](stack/ruby.md)
         * [Rails](stack/ruby/rails.md)
             * [Setup](stack/ruby/rails/setup.md)

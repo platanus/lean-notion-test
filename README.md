@@ -4,10 +4,8 @@ Esta es La Guía de Platanus. Acá encontrarás una suerte de mandamientos, line
 
 # Secciones
 
-## [Power API](power_api.md)
-## [Vue](vue.md)
-* [tips vue](vue/tips_vue.md)
-    * [Super tips vue](vue/tips_vue/super_tips_vue.md)
+## [Stack](stack.md)
+* [Getting Started](stack/getting_started.md)
 # License
 
 La Guia is © 2022 platanus, spa. It is free software and may be redistributed under the terms specified in the LICENSE file.

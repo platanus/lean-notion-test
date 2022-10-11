@@ -17,14 +17,14 @@ Si estás leyendo esto en el futuro (o estás dentro del Windows Insiders Progra
 {% hint style="info" %}
 Antes de empezar, asegúrate de tener una versión de Windows mayor o igual a **1903** o **Build 18362**. Puedes chequear esto ejecutando con `winver` en el buscador del menu de Windows.
 
-<img src='assets/windows-1.png'/>
+<img src='./assets/windows-1.png'/>
 
 
 {% endhint %}
 
 1. Activa WSL ejecutando lo siguiente en una consola de powershell con permisos de administrador:
 
-    <img src='assets/windows-2.png'/>
+    <img src='./assets/windows-2.png'/>
 
     ```plain text
     dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart

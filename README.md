@@ -58,6 +58,13 @@ Esta es La Guía de Platanus. Acá encontrarás una suerte de mandamientos, line
     * [Expo](setup/configuracion_de_proyectos/expo.md)
     * [S3](setup/configuracion_de_proyectos/s3.md)
     * [Git](setup/configuracion_de_proyectos/git.md)
+## [Deployment](deployment.md)
+* [Rails](deployment/rails.md)
+* [Ruby Gems](deployment/ruby_gems.md)
+* [Mobile Resources](deployment/mobile_resources.md)
+* [Browser and Node (Open Source)](deployment/browser_and_node_open_source.md)
+* [Apple App Storage](deployment/apple_app_storage.md)
+* [Google Play](deployment/google_play.md)
 # License
 
 La Guia is © 2022 platanus, spa. It is free software and may be redistributed under the terms specified in the LICENSE file.

@@ -20,11 +20,8 @@ Esta es La Guía de Platanus. Acá encontrarás una suerte de mandamientos, line
         * [Active Job](stack/ruby/rails/active_job.md)
     * [Gems](stack/ruby/gems.md)
 ## [Setup](setup.md)
+* [Configuración de proyectos](setup/configuracion_de_proyectos.md)
 * [Configuración de tu entorno local](setup/configuracion_de_tu_entorno_local.md)
-    * [Instalación Base](setup/configuracion_de_tu_entorno_local/instalacion_base.md)
-        * [OSX](setup/configuracion_de_tu_entorno_local/instalacion_base/osx.md)
-        * [Windows](setup/configuracion_de_tu_entorno_local/instalacion_base/windows.md)
-        * [Linux](setup/configuracion_de_tu_entorno_local/instalacion_base/linux.md)
     * [Tecnologías](setup/configuracion_de_tu_entorno_local/tecnologias.md)
         * [Ruby](setup/configuracion_de_tu_entorno_local/tecnologias/ruby.md)
         * [Docker](setup/configuracion_de_tu_entorno_local/tecnologias/docker.md)
@@ -36,7 +33,10 @@ Esta es La Guía de Platanus. Acá encontrarás una suerte de mandamientos, line
                 * [Visual Studio Code](setup/configuracion_de_tu_entorno_local/herramientas/editores/ide_editores_de_codigo/visual_studio_code.md)
                 * [Sublime Text](setup/configuracion_de_tu_entorno_local/herramientas/editores/ide_editores_de_codigo/sublime_text.md)
         * [Git](setup/configuracion_de_tu_entorno_local/herramientas/git.md)
-* [Configuración de proyectos](setup/configuracion_de_proyectos.md)
+    * [Instalación Base](setup/configuracion_de_tu_entorno_local/instalacion_base.md)
+        * [Windows](setup/configuracion_de_tu_entorno_local/instalacion_base/windows.md)
+        * [Linux](setup/configuracion_de_tu_entorno_local/instalacion_base/linux.md)
+        * [OSX](setup/configuracion_de_tu_entorno_local/instalacion_base/osx.md)
 # License
 
 La Guia is © 2022 platanus, spa. It is free software and may be redistributed under the terms specified in the LICENSE file.

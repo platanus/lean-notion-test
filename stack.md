@@ -7,3 +7,7 @@ En esta sección podrás ver nuestro stack tecnológico. Herramientas usadas, pa
 [Ruby](stack/ruby.md)
 
 [JavaScript](stack/javascript.md)
+
+[CSS](stack/css.md)
+
+[Mobile](stack/mobile.md)

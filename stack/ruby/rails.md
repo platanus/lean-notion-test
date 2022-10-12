@@ -1,6 +1,6 @@
 # Rails
 
-[Setup](rails/setup.md)
+[Rails](setup/configuracion_de_proyectos)
 
 [Potassium](rails/potassium.md)
 

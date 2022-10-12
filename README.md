@@ -8,7 +8,6 @@ Esta es La Guía de Platanus. Acá encontrarás una suerte de mandamientos, line
 * [Getting Started](stack/getting_started.md)
 * [Ruby](stack/ruby.md)
     * [Rails](stack/ruby/rails.md)
-        * [Setup](stack/ruby/rails/setup.md)
         * [Potassium](stack/ruby/rails/potassium.md)
         * [Power Types](stack/ruby/rails/power_types.md)
         * [Power API](stack/ruby/rails/power_api.md)

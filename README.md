@@ -4,7 +4,7 @@ Esta es La Guía de Platanus. Acá encontrarás una suerte de mandamientos, line
 
 # Secciones
 
-# [Stack](stack.md)
+## [Stack](stack.md)
 * [Getting Started](stack/getting_started.md)
 * [Ruby](stack/ruby.md)
     * [Rails](stack/ruby/rails.md)
@@ -19,7 +19,7 @@ Esta es La Guía de Platanus. Acá encontrarás una suerte de mandamientos, line
         * [Data Migrate](stack/ruby/rails/data_migrate.md)
         * [Active Job](stack/ruby/rails/active_job.md)
     * [Gems](stack/ruby/gems.md)
-# [Setup](setup.md)
+## [Setup](setup.md)
 * [Configuración de tu entorno local](setup/configuracion_de_tu_entorno_local.md)
     * [Instalación Base](setup/configuracion_de_tu_entorno_local/instalacion_base.md)
         * [OSX](setup/configuracion_de_tu_entorno_local/instalacion_base/osx.md)

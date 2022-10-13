@@ -289,7 +289,7 @@ service = BsaleService.new(order: order)
 result = service.create_credit_note
 ```
 
-**Servicios vs Jobs**
+### **Servicios vs Jobs**
 
 Los jobs tienen una función similar a la de los servicios, separar la lógica de negocios del resto de la aplicación, sin embargo, estos separan una función en específico, mientras que el servicio puede separar un grupo de funciones que apuntan a la misma lógica.
 

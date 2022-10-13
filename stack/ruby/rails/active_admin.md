@@ -431,3 +431,176 @@ Suponiendo que el blog tiene un archivo `image`:
     ```
 
 ### JavaScript en una vista
+
+Si necesitas agregar alguna pequeña inteligencia en una vista de Active Admin revisa nuestra guía sobre [AlpineJS](https://www.notion.so/js/alpine/README.md).
+
+### Active Admin Addons
+
+Es una [gema](https://github.com/platanus/activeadmin_addons) construida en Platanus sobre Active Admin y la utilizamos para facilitar algunas features comunes. Por ejemplo: [inputs con select2](https://github.com/platanus/activeadmin_addons/blob/master/docs/select2_default.md), [selector de booleanos en index/show](https://github.com/platanus/activeadmin_addons/blob/master/docs/toggle_bool.md), [selector de colores](https://github.com/platanus/activeadmin_addons/blob/master/docs/color-picker.md), etc.
+
+### Inputs custom
+
+Muchas veces en un formulario de Active Admin necesitamos un input custom. Por ejemplo: selectores de moneda, de colores, con búsqueda ajax, etc. Por esto, Active Admin ofrece una forma sencilla de agregar estos controles. Para mostrarte cómo funciona te mostraré en pasos como agregar un input que escribe con `console.info` lo que se escribió en input en el evento focus out.
+
+1. Agregar el archivo con mi input en `/app/inputs/logger_input.rb`.
+
+    > Ten en cuenta que el nombre del archivo debe tener la forma: [nombre_control]_input y lo mismo para el nombre de la clase, pero en CamelCase.
+
+    ```plain text
+    class LoggerInput < ActiveAdminAddons::InputBase
+      def render_custom_input
+        concat(label_html)
+        concat(builder.text_field(method, input_html_options))
+      end
+    end
+    ```
+
+1. Agregar el js con la lógica del focus out en `/app/assets/javascripts/admin/inputs/logger_input.js`
+
+    ```plain text
+    $(document).ready(function(){
+      $('.logger-input').each(function(i, el) {
+        $(el).on( "focusout", function(event) {
+          console.info(event.currentTarget.value);
+        });
+      });
+    });
+    ```
+
+1. Incluir el js en `/app/assets/javascripts/active_admin.js`:
+
+    ```plain text
+    //= require active_admin/base
+    //= require admin/inputs/logger_input
+    ```
+
+1. Usar en el form:
+
+    ```plain text
+    ActiveAdmin.register Blog do
+      form do |f|
+        f.inputs do
+          f.input :title, as: :logger
+        end
+    
+        f.actions
+      end
+    end
+    ```
+
+### Filtros custom
+
+Para manejar la búsqueda de los filtros ActiveAdmin por debajo usa [Ransack](https://github.com/activerecord-hackery/ransack). Esta gema usa [distintos sufijos](https://github.com/activerecord-hackery/ransack#search-matchers) para indicar distintos tipos de búsqueda. Además, nos permite hacer búsquedas con respecto a [atributos de asociaciones](https://github.com/activerecord-hackery/ransack#associations).
+
+Por ejemplo, si queremos buscar blogs por nombre de usuario:
+
+```ruby
+filter :user_name_cont
+```
+
+Aquí `_cont` indica que se entregarán los resultados que contengan el valor dado. Podríamos haber usado `_eq` si quisieramos un match perfecto, por ejemplo.
+
+### Utilizando Vue
+
+Muchas veces lo que se puede hacer con AA es un poco riguroso en cuanto a las necesidades del cliente, por lo que pueden haber situaciones en las cuales necesitemos incorporar Vue.js en AA. A continuación se explica una guía paso a paso de cómo agregar este en AA.
+
+Para esto tenemos 2 opciones:
+
+1. Hacer una vista custom como se mencionó anteriormente y ahí usar Vue.
+
+1. Usar directamente un componente en la vista de admin o en un vista html.arb.
+
+### Primer caso.
+
+1. Se crea el componente vue que queremos utilizar, por ejemplo `massive-edit.vue`.
+
+1. Luego debemos registrar el componente globalmente. Acá necesitamos usar un archivo diferente al `application.js` que utilizamos normalmente, para este caso usaremos un archivo llamado `admin_application.js` que se debe encontrar en la misma carpeta que el `application.js`, si no se encuentra debe crearlo, la convención para registrar los componentes que se usan en admin es de `snake_case`, siguiendo con el ejemplo anterior el archivo se vería así:
+
+    ```javascript
+    import Vue from 'vue/dist/vue.esm';
+    import MassiveEdit from '../views/products/massive-edit.vue';
+    
+    Vue.component('massive_edit', MassiveEdit);
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      if (document.getElementById('wrapper') !== null) {
+        return new Vue({
+          el: '#wrapper',
+        });
+      }
+    
+      return null;
+    });
+    ```
+
+1. Si queremos utilizar filtros, i18n o tailwind en los archivos Vue que utilizaremos en AA, debemos importarlos en este archivo también, tal como lo hacemos normalmente. Cabe destacar que si tenemos algo importado en `application.js` no va a funcionar en los componentes que se utilicen en AA, si no que debemos importarlos nuevamente en `admin_application.js`, acá un ejemplo del archivo completo:
+
+    ```javascript
+    import { camelizeKeys } from 'humps'; // filtro camelize
+    import Vue from 'vue/dist/vue.esm';
+    import MassiveEdit from '../views/products/massive-edit.vue';
+    import i18n from '../plugins/i18n'; // i18n
+    import '../css/application.css'; // tailwind
+    
+    Vue.component('massive_edit', MassiveEdit);
+    Vue.filter('camelizeKeys', camelizeKeys);
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      if (document.getElementById('wrapper') !== null) {
+        return new Vue({
+          el: '#wrapper',
+          i18n,
+        });
+      }
+    
+      return null;
+    });
+    ```
+
+1. Luego podemos ir a cualquier vista dentro de `app/views/admin` y usar el componente como lo hacemos normalmente:
+
+    ```html
+     <massive_edit :props="@props.to_json"> </massive_edit>
+    ```
+
+### Segundo caso.
+
+1. Hacer los mismos pasos anteriores.
+
+1. Instalar la clase `vue_component` desde nuestra gema potassium. Esto agrega un par de inicializadores a nuestra app. Se debe escribir `potassium install` y escoger `vue_component`.
+
+1. Luego en el archivo `initializers/active_admin.rb` debemos importar `vue_componment` y hacer build del componente registrado anteriormente:
+
+    ```plain text
+        require "vue_component.rb"
+    
+        AUTO_BUILD_ELEMENTS = %i{
+          massive_edit
+        }
+    
+        component_creator(AUTO_BUILD_ELEMENTS)
+    ```
+
+    La función component_creator recibe los nombres de los componentes y los convierte a html que puede procesar AA mediante la gema [Arbre](https://github.com/activeadmin/arbre). Lo anterior se debe poner fuera del `ActiveAdmin.setup`.
+
+1. Utilizar el componente en la vista, puede ser de las siguientes formas:
+
+    a. html.arb:
+
+    ```ruby
+    massive_edit(prop1: prop1, prop2: prop2)
+    ```
+
+    b. admin
+
+    ```ruby
+    index do
+      massive_edit(prop1: prop1, prop2: prop2)
+    end
+    ```
+
+## Recursos útiles
+
+* [Active Admin Docs](https://activeadmin.info/documentation.html)
+
+* [Active Admin Addons Docs](https://github.com/platanus/activeadmin_addons)

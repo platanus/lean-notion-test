@@ -13,6 +13,8 @@ Esta es La Guía de Platanus. Acá encontrarás una suerte de mandamientos, line
         * [Power API](stack/ruby/rails/power_api.md)
         * [Active Admin](stack/ruby/rails/active_admin.md)
         * [Shrine](stack/ruby/rails/shrine.md)
+            * [General](stack/ruby/rails/shrine/general.md)
+            * [Manejo y procesamiento de imágenes](stack/ruby/rails/shrine/manejo_y_procesamiento_de_imagenes.md)
         * [Pry](stack/ruby/rails/pry.md)
         * [Strong Migrations](stack/ruby/rails/strong_migrations.md)
         * [Data Migrate](stack/ruby/rails/data_migrate.md)

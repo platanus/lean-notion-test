@@ -4,6 +4,7 @@ Esta es La Guía de Platanus. Acá encontrarás una suerte de mandamientos, line
 
 # Secciones
 
+## [Cultura](cultura.md)
 ## [Stack](stack.md)
 * [Getting Started](stack/getting_started.md)
 * [Ruby](stack/ruby.md)

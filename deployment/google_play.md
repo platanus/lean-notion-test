@@ -30,7 +30,7 @@ Como práctica general las aplicaciones serán publicadas por un miembro del equ
 
 * Ir a la sección *Review and roll out release* (Si hay errores aparecerán aquí y tendrás que arreglarlos).
 
-* Presionar *Confirm rollout*
+* Presionar *Confirm rollout.*
 
 Es importante enviar esta versión al grupo de testers y al Product Owner. Luego el Product Owner debe probar, aprobar y
 **promover la aplicación a producción** (presionando en el botón *Release to Production*). El procedimiento completo para el Product Owner es el siguiente.

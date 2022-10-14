@@ -4,16 +4,6 @@
 
 Apoyamos 100% el trabajo remoto. Puedes trabajar desde tu casa o en la oficina.
 
-> probando
-
-    > esta cosa
-
-        bla
-
-    > del toggle
-
-        ble
-
 ### De Lunes a Jueves
 
 Estos días los dedicamos a trabajar para los productos de clientes y los nuestros

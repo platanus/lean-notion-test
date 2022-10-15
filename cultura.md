@@ -4,8 +4,6 @@
 
 Apoyamos 100% el trabajo remoto. Puedes trabajar desde tu casa o en la oficina.
 
-/
-
 ### De Lunes a Jueves
 
 Estos días los dedicamos a trabajar para los productos de clientes y los nuestros

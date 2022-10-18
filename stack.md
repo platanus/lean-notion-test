@@ -4,7 +4,7 @@ En esta sección podrás ver nuestro stack tecnológico. Herramientas usadas, pa
 
 [Getting Started](stack/getting_started.md)
 
-[Ruby](stack/ruby.md)
+[Ruby/Rails](stack/ruby_rails.md)
 
 [JavaScript](stack/javascript.md)
 

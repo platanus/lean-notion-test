@@ -65,7 +65,7 @@ Ahora, cada vez que quieras levantar o volver a trabajar en el proyecto, puede q
 
 1. Si alguien más está trabajando en el proyecto, puede que se hayan agregado nuevas migraciones. Para eso tendrías que correr `bundle exec rails db:migrate:with_data`. Si quieres saber por qué el `with_data` puedes ver la sección de: 
 
-    [Data Migrate](stack/ruby/rails/data_migrate.md)
+    [Data Migrate](stack/ruby_rails/data_migrate.md)
 
 1. Si hiciste un PR y te pidieron cambios, por lo general aplicamos esos cambios usando rebase. [En este post de nuestro blog](https://plata.news/blog/manteniendo-la-historia-limpia-usando-git-rebase/) tenemos más info sobre rebase y cómo lo usamos para mantener la historia limpia. También revisa [este post](https://fle.github.io/git-tip-keep-your-branch-clean-with-fixup-and-autosquash.html) sobre fixup, otra herramienta del rebase que usamos para esto
 

@@ -6,7 +6,7 @@
 
 [Power Types](ruby_rails/power_types.md)
 
-[Power API](ruby_rails/power_api.md)
+
 
 [Active Admin](ruby_rails/active_admin.md)
 

@@ -12,7 +12,6 @@
             * [Services](stack/ruby_rails/power_types/patrones/services.md)
             * [Values](stack/ruby_rails/power_types/patrones/values.md)
             * [Observers](stack/ruby_rails/power_types/patrones/observers.md)
-    * [Power API](stack/ruby_rails/power_api.md)
     * [Active Admin](stack/ruby_rails/active_admin.md)
     * [Shrine](stack/ruby_rails/shrine.md)
         * [General](stack/ruby_rails/shrine/general.md)

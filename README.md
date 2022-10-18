@@ -4,7 +4,8 @@ Esta es La Guía de Platanus. Acá encontrarás una suerte de mandamientos, line
 
 # Secciones
 
-## [Cultura](cultura.md)
+## [Guía de Estilo](guia_de_estilo.md)
+* [Upgrade de Vue 2 a Vue 3](guia_de_estilo/upgrade_de_vue_2_a_vue_3.md)
 ## [Stack](stack.md)
 * [Getting Started](stack/getting_started.md)
 * [Ruby/Rails](stack/ruby_rails.md)

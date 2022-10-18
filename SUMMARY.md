@@ -1,6 +1,5 @@
 # Summary
 ## [Guía de Estilo](guia_de_estilo.md)
-* [Upgrade de Vue 2 a Vue 3](guia_de_estilo/upgrade_de_vue_2_a_vue_3.md)
 ## [Stack](stack.md)
 * [Getting Started](stack/getting_started.md)
 * [Ruby/Rails](stack/ruby_rails.md)
@@ -68,3 +67,5 @@
 * [Browser and Node (Open Source)](deployment/browser_and_node_open_source.md)
 * [Apple App Storage](deployment/apple_app_storage.md)
 * [Google Play](deployment/google_play.md)
+## [Upgrades](upgrades.md)
+* [Upgrade de Vue 2 a Vue 3](upgrades/upgrade_de_vue_2_a_vue_3.md)

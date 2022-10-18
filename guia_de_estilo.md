@@ -148,10 +148,6 @@
 
 * Preferir definir scopes en vez de definir queries en controllers.
 
-
-
-
-
 ## Views
 
 * Mientras menos nesteado el html, mejor. No agregar divs wrappers para agregar una sola clase a menos que sea 100% necesario.
@@ -322,8 +318,6 @@
 
 * Solo en Vuex: Mutaciones deberían ir en su propio archivo como constantes.
 
-
-
 ## Vue - Librerías
 
 * [Pinia ](https://pinia.vuejs.org/)para state management
@@ -352,8 +346,6 @@
     <div id="hero-only-used-once" class="h-[400px] w-[100%]">
     ```
 
-
-
 ## Quiero implementar trackeo de cambios en valores de modelo
 
 Usar paper_trail
@@ -364,20 +356,8 @@ Usar devise-two-factor
 
 PR de ejemplo: https://github.com/platanus/ventures-nest/pull/322/files
 
-
-
 ## Quiero implementar Tags
 
 Usar act-as-taggable-on
-
-
-
-## Quiero actualizar de Vue 2 a Vue 3
-
-[Upgrade de Vue 2 a Vue 3](guia_de_estilo/upgrade_de_vue_2_a_vue_3.md)
-
-
-
-## Quiero actualizar de Postgresql 10 a Postgresql 11(+?)
 
 

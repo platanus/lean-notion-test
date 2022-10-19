@@ -4,4 +4,4 @@
 
 [Windows](instalacion_base/windows.md)
 
-
+[[DRAFT] Linux](instalacion_base/draft_linux.md)

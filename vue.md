@@ -4,11 +4,11 @@
 
 hola vue
 
-[General](#general)
+[General con tílde](#general-con-tilde)
 
-[Holaaaa](#holaaaa)
+[Holaaaa amiguitos que onda](#holaaaa-amiguitos-que-onda)
 
-## General
+## General con tílde
 
 [Vue.js](https://vuejs.org/v2/guide/) es un framework progresivo orientado a la construcción de [~~***`interfaces`***~~](http://google.com) de usuario, siendo capaz también de servir en la contrucción de SPAs.
 
@@ -45,7 +45,7 @@ function bla() {
 
 
 
-### Holaaaa
+### Holaaaa amiguitos que onda
 
 - [ ] Sí
 

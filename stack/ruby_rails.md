@@ -6,7 +6,7 @@
 
 [Power Types](ruby_rails/power_types.md)
 
-[[DEPRECATED] Power API](ruby_rails/deprecated_power_api.md)
+
 
 [Active Admin](ruby_rails/active_admin.md)
 

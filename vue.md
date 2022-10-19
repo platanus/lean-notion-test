@@ -4,6 +4,10 @@
 
 hola vue
 
+
+
+
+
 ## General
 
 [Vue.js](https://vuejs.org/v2/guide/) es un framework progresivo orientado a la construcción de [~~***`interfaces`***~~](http://google.com) de usuario, siendo capaz también de servir en la contrucción de SPAs.

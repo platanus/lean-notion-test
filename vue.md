@@ -4,9 +4,9 @@
 
 hola vue
 
-[General]()
+[General](#General)
 
-[Holaaaa]()
+[Holaaaa](#Holaaaa)
 
 ## General
 

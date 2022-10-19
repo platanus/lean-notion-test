@@ -1,8 +1,6 @@
-# Integración Continua
+# Circle CI
 
-Con CI (ya sea Circle CI o Travis) podemos revisar que los tests de cada proyecto pasen, recibiendo feedback en nuestros commits y PRs antes de mergear. Además, en varios proyectos, con CI hacemos deploy automáticamente tras mergear a master.
-
-## Circle CI (Repositorios privados)
+Ocupamos [CircleCI](https://circleci.com/) para el linting y testing de nuestros PRs. Cuando creamos un nuevo proyecto con Potassium la configuración de circleci ya está en `.circleci/config.yml` pero tenemos que decirle a CircleCI que tenemos un nuevo proyecto que integrar. Para esto debemos entrar a
 
 [[https://circleci.com/add-projects/gh/platanus](https://circleci.com/add-projects/gh/platanus)]: Una vez logueado, buscar repositorio y presionar `Follow Project`.
 
@@ -17,7 +15,3 @@ Para realizar deploy en ciertos ambientes hay que agregar información a las var
 1. Seleccionar `Environment Variables`
 
 1. Seleccionar `Add Variable`
-
-### Potassium
-
-Con Potassium cualquier proyecto Rails que use la receta `heroku` va a traer el archivo que necesita CircleCI para hacer su trabajo.

@@ -4,7 +4,7 @@
 
 hola vue
 
-[General con tílde](#general-con-tilde)
+[General con tílde](#general-con-tílde)
 
 [Holaaaa amiguitos que onda](#holaaaa-amiguitos-que-onda)
 

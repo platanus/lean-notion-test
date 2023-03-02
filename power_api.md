@@ -8,6 +8,8 @@ a ver si en staging
 
 
 
+https://indiehoy.com/wp-content/uploads/2018/02/public-image-ltd.jpg
+
 
 
 [Bla](power_api/bla.md)
